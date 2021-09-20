@@ -12,8 +12,20 @@
     "html"
   ],
   "standard": {
-    "globals": ["App", "Page", "Component", "wx", "requirePlugin", "uni", "plus", "weex"],
-    "envs": ["jest", "browser"]
+    "globals": [
+      "App",
+      "Page",
+      "Component",
+      "wx",
+      "requirePlugin",
+      "uni",
+      "plus",
+      "weex"
+    ],
+    "envs": [
+      "jest",
+      "browser"
+    ]
   },
   "jest": {
     "testEnvironment": "jsdom",
@@ -69,6 +81,5 @@
     "stylelint-config-standard": "^20.0.0",
     "through2": "^4.0.2",
     "uglify-js": "^2.8.29"
-  },
-  "dependencies": {}
+  }
 }
