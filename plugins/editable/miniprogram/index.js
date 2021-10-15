@@ -121,6 +121,10 @@ function Editable (vm) {
       if (node.attrs.loop && i !== -1) {
         items[i] = '不循环'
       }
+      i = items.indexOf('自动播放')
+      if (node.attrs.autoplay && i !== -1) {
+        items[i] = '不自动播放'
+      }
     } else {
       items = config.node.slice(0)
     }
@@ -209,16 +213,21 @@ function Editable (vm) {
   }
 
   /**
-   * @description 在光标处插入一张图片
+   * @description 在光标处插入图片
    */
   vm.insertImg = function () {
     vm.getSrc && vm.getSrc('img').then(src => {
-      insert({
-        name: 'img',
-        attrs: {
-          src
-        }
-      })
+      if (typeof src === 'string') {
+        src = [src]
+      }
+      for (let i = 0; i < src.length; i++) {
+        insert({
+          name: 'img',
+          attrs: {
+            src: src[i]
+          }
+        })
+      }
     }).catch(() => { })
   }
 
@@ -291,7 +300,9 @@ function Editable (vm) {
         },
         children: [{
           name: 'video',
-          attrs: {},
+          attrs: {
+            controls: 'T'
+          },
           src
         }]
       })
@@ -302,7 +313,16 @@ function Editable (vm) {
    * @description 在光标处插入一个音频
    */
   vm.insertAudio = function () {
-    vm.getSrc && vm.getSrc('audio').then(src => {
+    vm.getSrc && vm.getSrc('audio').then(attrs => {
+      let src
+      if (attrs.src) {
+        src = attrs.src
+        attrs.src = undefined
+      } else {
+        src = attrs
+        attrs = {}
+      }
+      attrs.controls = 'T'
       if (typeof src === 'string') {
         src = [src]
       }
@@ -313,7 +333,7 @@ function Editable (vm) {
         },
         children: [{
           name: 'audio',
-          attrs: {},
+          attrs,
           src
         }]
       })
@@ -475,6 +495,16 @@ Editable.prototype.onUpdate = function (content, config) {
         }, 0)
       }
     }
+  }
+}
+
+Editable.prototype.onParse = function (node) {
+  // 空白单元格可编辑
+  if (this.vm.properties.editable && (node.name === 'td' || node.name === 'th') && !this.vm.getText(node.children)) {
+    node.children.push({
+      type: 'text',
+      text: ''
+    })
   }
 }
 

@@ -278,21 +278,36 @@ module.exports = {
           top: e.target.offsetTop - 30,
           items,
           success: tapIndex => {
-            if (items[tapIndex] === '封面') {
-              // 设置封面
-              this.root.getSrc('img', node.attrs.poster).then(url => {
-                this.root._editVal('nodes[' + (this.properties.opts[6] + i).replace(/_/g, '].children[') + '].attrs.poster', node.attrs.poster, url, true)
-              }).catch(() => { })
-            } else if (items[tapIndex] === '删除') {
-              this.remove(i)
-            } else {
-              // 切换循环播放
-              this.root.setData({
-                ['nodes[' + (this.properties.opts[6] + i).replace(/_/g, '].children[') + '].attrs.loop']: !node.attrs.loop
-              })
-              wx.showToast({
-                title: '成功'
-              })
+            switch (items[tapIndex]) {
+              case '封面':
+                // 设置封面
+                this.root.getSrc('img', node.attrs.poster).then(url => {
+                  this.root._editVal('nodes[' + (this.properties.opts[6] + i).replace(/_/g, '].children[') + '].attrs.poster', node.attrs.poster, url, true)
+                }).catch(() => { })
+                break
+              case '删除':
+                this.remove(i)
+                break
+              case '循环':
+              case '不循环':
+                // 切换循环播放
+                this.root.setData({
+                  ['nodes[' + (this.properties.opts[6] + i).replace(/_/g, '].children[') + '].attrs.loop']: !node.attrs.loop
+                })
+                wx.showToast({
+                  title: '成功'
+                })
+                break
+              case '自动播放':
+              case '不自动播放':
+                // 切换自动播放播放
+                this.root.setData({
+                  ['nodes[' + (this.properties.opts[6] + i).replace(/_/g, '].children[') + '].attrs.autoplay']: !node.attrs.autoplay
+                })
+                wx.showToast({
+                  title: '成功'
+                })
+                break
             }
           }
         })
@@ -605,14 +620,21 @@ module.exports = {
               })
             } else if (items[tapIndex] === '超链接') {
               // 将图片设置为链接
-              this.root.getSrc('link').then(url => {
-                this.root._editVal('nodes[' + (this.properties.opts[6] + i).replace(/_/g, '].children[') + ']', node, {
-                  name: 'a',
-                  attrs: {
-                    href: url
-                  },
-                  children: [node]
-                }, true)
+              this.root.getSrc('link', node.a ? node.a.href : '').then(url => {
+                // 如果有 a 标签则替换 href
+                if (node.a) {
+                  this.root._editVal('nodes[' + (this.properties.opts[6] + i).replace(/_/g, '].children[') + '].a.href', node.a.href, url, true)
+                } else {
+                  const link = {
+                    name: 'a',
+                    attrs: {
+                      href: url
+                    },
+                    children: [node]
+                  }
+                  node.a = link.attrs
+                  this.root._editVal('nodes[' + (this.properties.opts[6] + i).replace(/_/g, '].children[') + ']', node, link, true)
+                }
                 wx.showToast({
                   title: '成功'
                 })

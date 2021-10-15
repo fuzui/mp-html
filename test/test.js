@@ -101,8 +101,8 @@ console.log('11')
 <div class="ql-align-center" style="background-image:url(&quot;/xxx.jpg?a=2&amp;b=3&quot;)"></div>
 <![CDATA[<]]>
 <!-- 测试 flex 布局、未闭合标签、data- 属性处理 -->
-<div style="display:flex">
-  <div style="flex:1">123</div>
+<div style="display:flex;width:1000px">
+  <div style="flex:1" dir="rtl">123</div>
 </div>
 </br><div data-test="xxx" style="display:flex;display:-webkit-flex;"><div>
   <img data-src="/xxx.jpg" style="width:100%;height:100px">  `, true) // 补充测试

@@ -2,12 +2,12 @@
 
 > 一个强大的小程序富文本组件
 
-![star](https://badgen.net/github/stars/jin-yufeng/mp-html)
-![forks](https://badgen.net/github/forks/jin-yufeng/mp-html)
-[![npm](https://badgen.net/npm/v/mp-html)](https://www.npmjs.com/package/mp-html)
-![downloads](https://badgen.net/npm/dt/mp-html)
+![star](https://img.shields.io/github/stars/jin-yufeng/mp-html)
+![forks](https://img.shields.io/github/forks/jin-yufeng/mp-html)
+[![npm](https://img.shields.io/npm/v/mp-html)](https://www.npmjs.com/package/mp-html)
+![downloads](https://img.shields.io/npm/dt/mp-html)
 [![Coverage Status](https://coveralls.io/repos/github/jin-yufeng/mp-html/badge.svg?branch=master)](https://coveralls.io/github/jin-yufeng/mp-html?branch=master)
-![license](https://badgen.net/github/license/jin-yufeng/mp-html)
+![license](https://img.shields.io/github/license/jin-yufeng/mp-html)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## 功能介绍
@@ -129,6 +129,7 @@
      </script>
      ```
 
+  使用 `cli` 方式运行的项目，通过 `npm` 方式引入可能存在问题，详情可见 [#330](https://github.com/jin-yufeng/mp-html/issues/330)  
   如果在 `nvue` 中使用还要将 `dist/uni-app/static` 目录下的内容拷贝到项目的 `static` 目录下，否则无法运行  
 
 查看 [快速开始](https://jin-yufeng.gitee.io/mp-html/#/overview/quickstart) 了解更多
@@ -200,16 +201,17 @@
 
 ## 使用案例
 
-官方示例（富文本插件）  
-![富文本插件](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/富文本插件.jpg)
+| 官方示例 | 欢喜商城 | 多么生活 | 全品作业小助手 | 米兔旅行 |
+|:---:|:---:|:---:|:---:|:---:|
+| ![富文本插件](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/富文本插件.jpg) | ![欢喜商城](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/欢喜商城.png) | ![多么生活](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/多么生活.jpg) | ![全品作业小助手](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/全品作业小助手.jpg) | ![米兔旅行](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/米兔旅行.png) |
 
-| 欢喜商城 | 多么生活 | 米兔旅行 | 全品作业小助手 | 古典文学名著阅读 | 食法查 |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| ![欢喜商城](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/欢喜商城.png) | ![多么生活](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/多么生活.jpg) | ![米兔旅行](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/米兔旅行.png) | ![全品作业小助手](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/全品作业小助手.jpg) | ![古典文学名著阅读](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/古典文学名著阅读.jpg) | ![食法查](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/食法查.png) |
+| 食法查 | 微慕 | 古典文学名著阅读 | 程序员技术之旅 | Geek 时代 |
+|:---:|:---:|:---:|:---:|:---:|
+| ![食法查](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/食法查.png) | ![微慕](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/微慕.jpg) | ![古典文学名著阅读](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/古典文学名著阅读.jpg) | ![程序员技术之旅](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/程序员技术之旅.jpg) | ![Geek时代](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/Geek时代.jpg) |
 
-| APP 比比 | 源创智造 | 程序员技术之旅 | Geek 时代 | 备忘录与记事本 | 优秀笔记 |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| ![APP比比](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/APP比比.jpg) | ![源创智造](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/源创智造.png) | ![程序员技术之旅](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/程序员技术之旅.jpg) | ![Geek时代](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/Geek时代.jpg) | ![备忘录与记事本](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/备忘录与记事本.jpg) | ![优秀笔记](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/优秀笔记.jpg) |
+| 源创智造 | 备忘录与记事本 | 优秀笔记 | 365刷题 | 同城共享书 |
+|:---:|:---:|:---:|:---:|:---:|
+| ![源创智造](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/源创智造.png) | ![备忘录与记事本](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/备忘录与记事本.jpg) | ![优秀笔记](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/优秀笔记.jpg) | ![365刷题](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/365刷题.jpg) | ![同城共享书](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/case/同城共享书.jpg) |
 
 以上排名不分先后，更多可见 [使用案例收集](https://github.com/jin-yufeng/mp-html/issues/27)（欢迎添加）  
 
@@ -223,24 +225,19 @@
   ![支持](https://gitee.com/jin-yufeng/mp-html/raw/master/docs/assets/sponsor.png)   
 
 ## 更新日志
-- v2.1.2 (20210424)
-  1. `A` 增加了 [img-cache](https://jin-yufeng.gitee.io/mp-html/#/advanced/plugin#img-cache) 插件，可以在 `uni-app` 的 `app` 端缓存图片 [详细](https://github.com/jin-yufeng/mp-html/issues/292) by [@PentaTea](https://github.com/PentaTea)
-  2. `U` 支持通过 `container-style` 属性设置 `white-space` 来保留连续空格和换行符 [详细](https://jin-yufeng.gitee.io/mp-html/#/question/faq#space)
-  3. `U` 代码风格符合 [standard](https://standardjs.com) 标准
-  4. `U` `uni-app` 包使用 `editable` 插件编辑状态下支持预览视频 [详细](https://github.com/jin-yufeng/mp-html/issues/286)
-  5. `F` 修复了 `svg` 标签内嵌 `svg` 时无法显示的问题
-  6. `F` 修复了微信原生包 `img` 标签的 `style` 中包含 `inline` 时不显示的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/287)
-  7. `F` 修复了支付宝和头条小程序部分区域不可复制的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/291)
+- v2.1.5 (20210813)
+  1. `A` 增加支持标签的 `dir` 属性
+  2. `F` 修复了 `ruby` 标签文字与拼音没有居中对齐的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/325)
+  3. `F` 修复了音视频标签内有 `a` 标签时可能无法播放的问题
+  4. `F` 修复了 `externStyle` 中的 `class` 名包含下划线或数字时可能失效的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/326)
+  5. `F` 修复了 `uni-app` 包 `h5` 端引入 `externStyle` 可能不生效的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/326)
+  6. `F` 修复了微信原生包 `a` 标签的 `style` 中包含 `inline` 时不响应事件的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/332)
 
-- v2.1.1 (20210409)
-  1. `F` 修复了对 `p` 标签设置 `tag-style` 可能不生效的问题
-  2. `F` 修复了 `svg` 标签中的文本无法显示的问题
-  3. `F` 修复了 `uni-app` 包的 `nvue` 端不设置 `container-style` 可能报错的问题
-  4. `F` 修复了 `uni-app` 包使用 `editable` 插件编辑表格时可能报错的问题
-  5. `F` 修复了 `uni-app` 包使用 `highlight` 插件运行到头条小程序时可能没有样式的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/280)
-  6. `F` 修复了 `uni-app` 包使用 `editable` 插件 `editable` 属性为 `false` 时会报错的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/284)
-  7. `F` 修复了 `style` 插件连续子选择器失效的问题
-  8. `F` 修复了 `editable` 插件无法修改图片和字体大小的问题
+- v2.1.4 (20210714)
+  1. `F` 修复了 `rt` 标签无法设置样式的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/318)
+  2. `F` 修复了表格中有单元格同时合并行和列时可能显示不正确的问题
+  3. `F` 修复了 `uni-app` 包的 `app` 端无法关闭图片长按菜单的问题 [详细](https://github.com/jin-yufeng/mp-html/issues/322)
+  4. `F` 修复了 `editable` 插件只能添加图片链接不能修改的问题 [详细](https://github.com/jin-yufeng/mp-html/pull/312) by [@leeseett](https://github.com/leeseett)
 
   从 `1.x` 的升级方法可见 [更新指南](https://jin-yufeng.gitee.io/mp-html/#/changelog/changelog?id=v200)
 
