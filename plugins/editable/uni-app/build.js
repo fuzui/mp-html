@@ -119,7 +119,17 @@ module.exports = {
      */
     remove (i) {
       const arr = this.childs.slice(0)
-      arr.splice(i, 1)
+      const delEle = arr.splice(i, 1)[0]
+      if (delEle.name === 'img' || delEle.name === 'video' || delEle.name === 'audio') {
+        let src = delEle.attrs.src
+        if (delEle.src) {
+          src = delEle.src.length === 1 ? delEle.src[0] : delEle.src
+        }
+        this.root.$emit('remove', {
+          type: delEle.name,
+          src
+        })
+      }
       this.root._edit = undefined
       this.root._maskTap()
       this.root._editVal(this.opts[6], this.childs, arr, true)
@@ -247,8 +257,8 @@ module.exports = {
             switch (items[tapIndex]) {
               case '封面':
                 // 设置封面
-                this.root.getSrc('img', node.attrs.poster).then(url => {
-                  this.root._editVal(`${this.opts[6]}.${i}.attrs.poster`, node.attrs.poster, url, true)
+                this.root.getSrc('img', node.attrs.poster || '').then(url => {
+                  this.root._editVal(`${this.opts[6]}.${i}.attrs.poster`, node.attrs.poster, url instanceof Array ? url[0] : url, true)
                 }).catch(() => { })
                 break
               case '删除':
@@ -516,8 +526,8 @@ function getTop(e) {
           success: tapIndex => {
             if (items[tapIndex] === '换图') {
               // 换图
-              this.root.getSrc('img', node.attrs.src).then(src => {
-                this.root._editVal(this.opts[6] + '.' + i + '.attrs.src', node.attrs.src, src, true)
+              this.root.getSrc('img', node.attrs.src || '').then(url => {
+                this.root._editVal(this.opts[6] + '.' + i + '.attrs.src', node.attrs.src, url instanceof Array ? url[0] : url, true)
               }).catch(() => { })
             } else if (items[tapIndex] === '宽度') {
               // 更改宽度
@@ -571,8 +581,8 @@ function getTop(e) {
               }).catch(() => { })
             } else if (items[tapIndex] === '预览图') {
               // 设置预览图链接
-              this.root.getSrc('img', node.attrs['original-src']).then(url => {
-                this.root._editVal(this.opts[6] + '.' + i + '.attrs.original-src', node.attrs['original-src'], url, true)
+              this.root.getSrc('img', node.attrs['original-src'] || '').then(url => {
+                this.root._editVal(this.opts[6] + '.' + i + '.attrs.original-src', node.attrs['original-src'], url instanceof Array ? url[0] : url, true)
                 uni.showToast({
                   title: '成功'
                 })
